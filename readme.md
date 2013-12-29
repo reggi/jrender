@@ -2,12 +2,22 @@
 
 Edit your views with a jQuery server-side postprocessor.
 
+## Installation
+
+```
+npm install jrender --save
+```
+
+## Setup
+
 Here's the middleware in app.js.
 
 ```
 var jrender = require("jrender");
 app.use(jrender());
 ``` 
+
+## Usage
 
 Here's a route.
 
