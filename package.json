@@ -1,0 +1,26 @@
+{
+  "name": "jrender",
+  "version": "0.0.0",
+  "description": "Render express templates with jQuery",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/reggi/jrender"
+  },
+  "author": "Thomas Reggi",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/reggi/jrender/issues"
+  },
+  "homepage": "https://github.com/reggi/jrender",
+  "dependencies": {
+    "async": "~0.2.9",
+    "jquery": "~2.1.0-beta3",
+    "jsdom": "~0.8.10",
+    "dotty": "0.0.2",
+    "underscore": "~1.5.2"
+  }
+}
