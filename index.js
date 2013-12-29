@@ -47,7 +47,9 @@ var jrender = function(res){
             var document = pass.window.document;
             var $ = window.jQuery;
             code($);
-            pass.html = $(document).children().prop('outerHTML');
+            pass.html = "";
+            pass.html += $(document).prop('doctype')+"\n";
+            pass.html += $(document).children().prop('outerHTML');
             return callback(null, pass);
         }
 
