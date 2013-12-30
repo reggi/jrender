@@ -46,9 +46,10 @@ var jrender = function(res){
             var window = pass.window;
             var document = pass.window.document;
             var $ = window.jQuery;
+            var doctype = $(document).prop('doctype');
             code($);
             pass.html = "";
-            pass.html += $(document).prop('doctype')+"\n";
+            if(doctype) pass.html += $(document).prop('doctype')+"\n";
             pass.html += $(document).children().prop('outerHTML');
             return callback(null, pass);
         }
@@ -60,13 +61,10 @@ var jrender = function(res){
             waterfall.jquery,
             waterfall.code
         ], function(err, pass){
-            if(err){
-                if(callback) return callback(err);
-                return err;
-            }
-            var html = pass.html;
-            if(callback) return callback(null, html);
-            return res.send(html);
+            if(err && callback) return callback(err);
+            if(err) return err;
+            if(callback) return callback(null, pass.html);
+            return res.send(pass.html);
         });
 
     }
